@@ -13,16 +13,12 @@ class Navbar extends Component {
                 <div className="collapse navbar-collapse" id="navbarsExample04">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            <Link to="/" className="nav-link font-weight-bolder" >Home <span className="sr-only">(current)</span></Link>
+                            <Link to="/" className="nav-link font-weight-bolder">Home <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/questions" className="nav-link font-weight-bolder">Questions</Link>
                         </li>
                     </ul>
-                    
-                    <form className="form-inline my-2 my-md-0">
-                    <input className="form-control" type="text" placeholder="Search"/>
-                    </form>
                 </div>
             </nav>
         );
