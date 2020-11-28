@@ -1,16 +1,24 @@
-import React, {useState} from 'react';
-import Question from '../../components/Question';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import Categories from '../../components/Categories';
+import QuestionModel from '../../models/question';
 
 
 function AllQuestions(props){
-    const [categories, setCategories] = useState([
-        <Link to="/questions/ethical"><Categories/></Link>,
-        <Link to="/questions/polls"><Categories category = "Polls"/></Link>,
-    ]);
+    const [categories, setCategories] = useState([]);
 
-    console.log(props)
+    useEffect(()=>{//ComponentDidMount
+
+        QuestionModel.categories().then((response)=>{
+
+            const {categories} = response.data;
+            const categoriesArray = categories.map((category,index)=>{
+                return <Link to={`/questions/${category}`} key = {index} ><Categories category = {category} /></Link>;
+            });
+            setCategories(categoriesArray);
+        });
+
+    },[]);
 
     return (
         <main className = "community-questions">
@@ -25,7 +33,6 @@ function AllQuestions(props){
             
             <div className= "allQuestions">
                 {categories}
-                {Question}
             </div>
         </main>
     );
