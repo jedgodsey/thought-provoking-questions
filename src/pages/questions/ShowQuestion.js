@@ -8,15 +8,20 @@ const capitalize = (s) => {
 
 const ShowQuestion = (props) => {
     const [category, setCategory] = useState(capitalize(props.match.url.split("/")[2]));
+    const [id, setId] = useState(props.match.url.split("/")[3]);
+    const [questionText, setQuestionText] = useState("");
 
     useEffect(()=>{
-        QuestionModel.all().then((response)=>{
-            console.log(response)
+        QuestionModel.byId(id).then((response)=>{
+            console.log(response.data.question.question)
+            setQuestionText(response.data.question.question)
         })
     },[])// psuedo componentdidmount
+    
     return (
         <div>
             This is your question about {category}
+            <p>{questionText}</p>
         </div>
     );
 }
