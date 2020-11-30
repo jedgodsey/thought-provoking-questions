@@ -31,14 +31,14 @@ const LogInForm = () => {
                 value = {name}
                 />
                 <input 
-                onChange = {nameChange}
+                onChange = {emailChange}
                 className = "form_input"
                 type="text"
                 placeholder = "Enter Email"
                 value = {email}
                 />
                 <input 
-                onChange = {nameChange}
+                onChange = {passwordChange}
                 className = "form_input"
                 type="text"
                 placeholder = "Enter Password"
