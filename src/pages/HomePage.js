@@ -11,7 +11,7 @@ class HomePage extends Component {
                         HomePage!!
                     </h1>
                     <p>
-                        Wow this is text
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quam et, nulla culpa eligendi at facere incidunt harum. Quibusdam accusamus facere neque cumque magni eaque alias rerum placeat praesentium omnis!
                     </p>
                 </div>
 

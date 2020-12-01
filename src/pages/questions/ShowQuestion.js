@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ReplyForm from '../../components/ReplyForm';
+import { Link } from 'react-router-dom';
 import QuestionModel from '../../models/question';
 
 const capitalize = (s) => {
@@ -37,6 +38,7 @@ const ShowQuestion = (props) => {
             <h3>{questionText}</h3>
             {replies}
             <ReplyForm questionId = {id}/>
+            <Link to={`/questions/${category}`}><button type="button" className="btn btn-primary">back</button></Link>
         </div>
     );
 }

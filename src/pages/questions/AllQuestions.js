@@ -26,8 +26,7 @@ function AllQuestions(props){
             <div className="title container mt-4">
                 <h1>Community Questions</h1>
                 <div className = "filter_add_buttons">
-                    <button type="button" className="btn btn-light">Filter</button>
-                    <Link to="/questions/add"><button type="button" className="btn btn-primary">Add "?"</button></Link>
+                    <Link to="/questions/add"><button type="button" className="btn btn-secondary">Add "?"</button></Link>
                 </div>
             </div>
             

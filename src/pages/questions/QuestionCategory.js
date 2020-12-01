@@ -22,18 +22,15 @@ const QuestionCategory = (props) => {
     },[]);
 
     return (
-        <main>
+        <main className = "questions-by-category">
             <h1>
-                Welcome the Category {category}
+                Welcome the {category} questions
             </h1>
 
-            <p>
-                This is where i would make an api i call to the database/api i made.
-            </p>
-
-            <div>
+            <div className ="cards-holder">
                 {questions}
             </div>
+            <Link to="/questions"><button type="button" className="btn btn-primary">back</button></Link>
         </main>
     );
 }

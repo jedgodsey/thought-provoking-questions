@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import LoginModal from './auth/LoginModal';
+import RegisterModal from './auth/RegisterModal';
+import Logout from './auth/Logout';
 
 const LogInForm = () => {
     const [name, setName] = useState('');
@@ -21,8 +24,8 @@ const LogInForm = () => {
 
     return (
         <div className= "loginFrom">
-            This is Where the login form will be but for now here is some text and box
-            <form>
+            {/* This is Where the login form will be but for now here is some text and box */}
+            {/* <form>
                 <input 
                 onChange = {nameChange}
                 className = "form_input"
@@ -44,7 +47,10 @@ const LogInForm = () => {
                 placeholder = "Enter Password"
                 value = {password}
                 />
-            </form>
+            </form> */}
+            <LoginModal/>
+            <RegisterModal/>
+            <Logout/>
         </div>
     );
 }
