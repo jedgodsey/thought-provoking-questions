@@ -13,6 +13,7 @@ const ShowQuestion = (props) => {
     const [id, setId] = useState(props.match.url.split("/")[3]);
     const [questionText, setQuestionText] = useState("");
     const [replies, setReplies] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
         QuestionModel.byId(id).then((response)=>{
@@ -21,6 +22,7 @@ const ShowQuestion = (props) => {
             console.log(replyArray)
             setQuestionText(response.data.question.question)
             getReplies(replyArray);
+            setLoading(false);
         })
     },[])// psuedo componentdidmount
     
@@ -34,12 +36,16 @@ const ShowQuestion = (props) => {
 
     return (
         <div>
-            {/* This is your question about {category} */}
-            <h3>{questionText}</h3>
-            {replies}
-            <ReplyForm questionId = {id}/>
-            <Link to={`/questions/${category}`}><button type="button" className="btn btn-primary">back</button></Link>
-        </div>
+            {loading ? <p>loading...</p> : (
+                <div>
+                    {/* This is your question about {category} */}
+                    <h3>{questionText}</h3>
+                    {replies}
+                    <ReplyForm questionId = {id}/>
+                    <Link to={`/questions/${category}`}><button type="button" className="btn btn-primary">back</button></Link>
+                </div>
+            )}
+            </div>
     );
 }
 
