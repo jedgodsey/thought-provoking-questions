@@ -2,14 +2,12 @@ import React , {useEffect, useState} from 'react';
 import Question from '../../components/Question';
 import { Link } from 'react-router-dom';
 import QuestionModel from '../../models/question';
-import {useSelector} from 'react-redux';
 
 
 const QuestionCategory = (props) => {
     const [category, setCategory] = useState(props.match.url.split("/")[2]);
     const [questions, setQuestions] = useState([]);
     const [loading, setLoading] = useState(true);
-    const authenticated = useSelector(state=> state)
 
     useEffect(()=>{
         QuestionModel.questionsByCategory(category).then((response)=>{
@@ -21,7 +19,6 @@ const QuestionCategory = (props) => {
             });
             setQuestions(questionArray);
             setLoading(false);
-            console.log(authenticated)
         });
     },[]);
 

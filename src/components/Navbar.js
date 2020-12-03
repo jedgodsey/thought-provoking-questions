@@ -1,10 +1,33 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component, useEffect, useState } from 'react';
+import { NavLink,Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import UserChecker from '../models/userChecker';
+import  Logout  from './auth/Logout';
+import  LoginModal from './auth/LoginModal';
 
-class Navbar extends Component {
-    render() {
-        return (
-            <nav className="navbar navbar-expand-md navbar-dark" id = "siteNav">
+
+const Navbar = () => {
+    const [auth, setAuth] = useState(useSelector(state=> state));
+    const [isAthenticated, setIsAthenticated] = useState(false);
+
+    useEffect(()=>{
+        // console.log("Use effect on auth");
+        
+    },[auth])
+    
+
+    useEffect(()=>{
+
+        // let userIdentification = UserChecker.getUserId(auth);
+        const isUserLoggedIn = UserChecker.isUserLoggedIn(auth);
+        console.log(isUserLoggedIn);
+        setIsAthenticated(isUserLoggedIn);
+        // console.log(userIdentification);
+        
+    },[])
+
+    return (
+        <nav className="navbar navbar-expand-md navbar-dark" id = "siteNav">
                 <a className="navbar-brand logo" href="/">tpq</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -13,16 +36,29 @@ class Navbar extends Component {
                 <div className="collapse navbar-collapse" id="navbarsExample04">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <Link to="/" className="nav-link font-weight-bolder">Home <span className="sr-only">(current)</span></Link>
+                            <NavLink exact to="/" className="nav-link font-weight-bolder">Home <span className="sr-only">(current)</span></NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link to="/questions" className="nav-link font-weight-bolder">Questions</Link>
+                            <NavLink exact to="/questions" className="nav-link font-weight-bolder">Questions</NavLink>
                         </li>
+                        {isAthenticated ? 
+                        <li>
+                            <div>
+                                <Logout/>
+                            </div>
+                        </li>
+                        :
+                        <li>
+                            <div>
+                                <LoginModal/>
+                            </div>
+                        </li>
+                        }
+                        
                     </ul>
                 </div>
             </nav>
-        );
-    }
+    );
 }
 
 export default Navbar;

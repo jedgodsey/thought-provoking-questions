@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import ReplyModel from '../models/replies';
+import { useSelector } from 'react-redux';
+import UserChecker from '../models/userChecker';
 
 const ReplyForm = (props) => {
     const [input, setInput] = useState('');
+    const auth = useSelector(state=> state);
+    const [userId, setUserId] = useState('');
 
     useEffect(()=>{
-        console.log("component did mount")
+        const userIdentification = UserChecker.getUserId(auth);
+        setUserId(userIdentification);
     },[]);
 
     const onTextChange = (event)=>{
@@ -16,7 +21,8 @@ const ReplyForm = (props) => {
         // event.preventDefault();
         const submitingValue = {
             reply: input,
-            questId: props.questionId
+            questId: props.questionId,
+            user: userId
         };
         console.log(submitingValue);
         ReplyModel.addByQuestionId(submitingValue).then((response)=>{

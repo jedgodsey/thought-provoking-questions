@@ -9,9 +9,9 @@ class ReplyModel {
     static addByQuestionId(obj){
         return axios.post('http://localhost:4000/replies/byquestion/',obj)
     }
-    // static addByQuestionId(questionId,reply){
-
-    // }
+    static update(id,obj){
+        return axios.put(`http://localhost:4000/replies/${id}`,obj)
+    }
 }
 
 export default ReplyModel;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import {
   Button,
   Modal,
@@ -46,6 +46,7 @@ class LoginModal extends Component {
     if (this.state.modal) {
       if (isAuthenticated) {
         this.toggle();
+        this.setState({});
       }
     }
   }
@@ -74,6 +75,8 @@ class LoginModal extends Component {
 
     // Attempt to login
     this.props.login(user);
+    this.forceUpdate();
+    // window.location.reload(false);
   };
 
   render() {
@@ -121,6 +124,8 @@ class LoginModal extends Component {
     );
   }
 }
+
+
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,

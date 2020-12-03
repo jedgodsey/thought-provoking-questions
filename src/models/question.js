@@ -17,6 +17,9 @@ class QuestionModel {
     static addQuestion(obj){
         return axios.post(url,obj)
     }
+    static update(id,obj){
+        return axios.put(`http://localhost:4000/questions/${id}`,obj)
+    }
 }
 
 export default QuestionModel;

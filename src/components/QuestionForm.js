@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import QuestionModel from '../models/question';
+import {useSelector} from 'react-redux';
+import UserChecker from '../models/userChecker';
+
 
 const QuestionForm = () => {
     const [questionText, setQuestionText] = useState('');
     const [pickedCategory, setPickedCategory] = useState('Philosophical');
     const [categories, setCategories] = useState('');
-
+    const [userId, setUserId] = useState('');
+    const auth = useSelector(state=> state);
     let history = useHistory();
 
     useEffect(()=>{
@@ -18,8 +22,10 @@ const QuestionForm = () => {
                 // return { [category] :<option key = {index}>{category}</option>}
                 return <option key = {index}>{category}</option>
             });
-            console.log(categories);
-            console.log(categoryStates);
+            const userIdentification = UserChecker.getUserId(auth);
+
+            console.log('userid: ', userIdentification)
+            setUserId(userIdentification);
             setCategories(categoryStates);
         });
 
@@ -34,7 +40,8 @@ const QuestionForm = () => {
         event.preventDefault();//This prevents the page refresh
         const temp = {
             question: questionText,
-            category: pickedCategory
+            category: pickedCategory,
+            user: userId
         }
         QuestionModel.addQuestion(temp).then((response)=>{
             console.log(response);

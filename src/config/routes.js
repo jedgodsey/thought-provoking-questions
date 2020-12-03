@@ -5,6 +5,9 @@ import AllQuestions from '../pages/questions/AllQuestions';
 import AddQuestion from '../pages/questions/AddQuestion';
 import QuestionCategory from '../pages/questions/QuestionCategory';
 import ShowQuestion from '../pages/questions/ShowQuestion';
+import NotAUser from '../pages/NotAUser';
+import AllUsers from '../pages/users/AllUsers';
+import PersonalDash from '../pages/users/PersonalDash';
 
 
 export default (
@@ -13,6 +16,9 @@ export default (
         <Route path = '/questions/add' component = {AddQuestion}/>
         <Route path = '/questions/:category' component = {QuestionCategory}/>
         <Route path = '/questions' component = {AllQuestions}/>
+        <Route path = '/GottaLoginBuddy' component = {NotAUser}/>
+        <Route path = '/users' component = {AllUsers}/>
+        <Route path = '/profile' component = {PersonalDash}/>
         <Route path = '/' component = {HomePage}/>
     </Switch>
 )
