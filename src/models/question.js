@@ -20,6 +20,9 @@ class QuestionModel {
     static update(id,obj){
         return axios.put(`http://localhost:4000/questions/${id}`,obj)
     }
+    static update(id){
+        return axios.delete(`http://localhost:4000/questions/${id}`)
+    }
 }
 
 export default QuestionModel;

@@ -12,6 +12,9 @@ class ReplyModel {
     static update(id,obj){
         return axios.put(`http://localhost:4000/replies/${id}`,obj)
     }
+    static update(id){
+        return axios.delete(`http://localhost:4000/replies/${id}`)
+    }
 }
 
 export default ReplyModel;

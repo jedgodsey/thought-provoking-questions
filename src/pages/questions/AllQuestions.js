@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import Categories from '../../components/Categories';
 import QuestionModel from '../../models/question';
+import YoutubeModel from '../../models/youtube';
 
 
 function AllQuestions(props){
@@ -17,7 +18,9 @@ function AllQuestions(props){
             });
             setCategories(categoriesArray);
         });
-
+        // YoutubeModel.all().then((res)=>{
+        //     console.log(res);
+        // });
     },[]);
 
     return (
