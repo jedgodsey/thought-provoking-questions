@@ -9,6 +9,7 @@ import  LoginModal from './auth/LoginModal';
 const Navbar = () => {
     const [auth, setAuth] = useState(useSelector(state=> state));
     const [isAthenticated, setIsAthenticated] = useState(false);
+    const [questions, setQuestions] = useState([]);
 
     useEffect(()=>{
         // console.log("Use effect on auth");
@@ -41,6 +42,7 @@ const Navbar = () => {
                         <li className="nav-item">
                             <NavLink exact to="/questions" className="nav-link font-weight-bolder">Questions</NavLink>
                         </li>
+                        
                         {isAthenticated ? 
                         <li>
                             <div>
@@ -54,6 +56,10 @@ const Navbar = () => {
                             </div>
                         </li>
                         }
+                        {isAthenticated && 
+                        <li className="nav-item">
+                            <NavLink exact to="/profile" className="nav-link font-weight-bolder">Profile</NavLink>
+                        </li>}
                         
                     </ul>
                 </div>

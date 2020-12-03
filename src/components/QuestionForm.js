@@ -7,7 +7,7 @@ import UserChecker from '../models/userChecker';
 
 const QuestionForm = () => {
     const [questionText, setQuestionText] = useState('');
-    const [pickedCategory, setPickedCategory] = useState('Philosophical');
+    const [pickedCategory, setPickedCategory] = useState('Ethics');
     const [categories, setCategories] = useState('');
     const [userId, setUserId] = useState('');
     const auth = useSelector(state=> state);
@@ -45,7 +45,7 @@ const QuestionForm = () => {
         }
         QuestionModel.addQuestion(temp).then((response)=>{
             console.log(response);
-            history.push("/questions");
+            history.push(`/questions/${pickedCategory}`);
         });
     }
 

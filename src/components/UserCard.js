@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import {Link} from 'react-router-dom';
 
-const UserCard = () => {
+const UserCard = (props) => {
+    // const [user, setUser] = useState(props.us);
+    useEffect(()=>{
+        console.log(props.user.name)
+    },[])
+
     return (
-        <div>
-            Usercard
-        </div>
+        <Link to={`/users/${props.user._id}`}>
+            <div>
+                <h2>
+                    {props.user.name}
+                </h2>
+            </div>
+        </Link>
     );
 }
 

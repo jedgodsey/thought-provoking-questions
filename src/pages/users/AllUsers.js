@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import UserModel from '../../models/users';
 import { useSelector } from 'react-redux';
 import UserChecker from '../../models/userChecker';
+import UserCard from '../../components/UserCard';
 
 
 const AllUsers = (props) => {
@@ -9,7 +10,13 @@ const AllUsers = (props) => {
 
     useEffect(() => {
         UserModel.all().then((res)=>{
-            console.log(res);
+            const arrUsers = res.data;
+            const arrUserCards = arrUsers.map((user,index)=>{
+                console.log(user._id)
+                return <UserCard key = {index} user={user}/>
+            });
+            setUsers(arrUserCards);
+            console.log(res.data);
         });
         console.log("is this working")
     }, []);
@@ -17,6 +24,8 @@ const AllUsers = (props) => {
     return (
         <div>
             This is where all the user would go.
+            {/* <UserCard/> */}
+            {users}
         </div>
     );
 }

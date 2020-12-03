@@ -38,6 +38,13 @@ const EditQuestion = (props) => {
         });
     }
 
+    const deleteButtonHandler = ()=>{
+        QuestionModel.delete(props.question._id).then((res)=>{
+            console.log("deleting my question");
+            // setUpdate(!update);
+        })
+        history.push('/questions');
+    }
     
     return (
         <div>
@@ -53,6 +60,7 @@ const EditQuestion = (props) => {
                 <input type="submit" value="Submit" />
             </form>
             
+            <button onClick = {deleteButtonHandler} >Delete</button>
         </div>
     );
 }

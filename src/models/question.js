@@ -20,8 +20,12 @@ class QuestionModel {
     static update(id,obj){
         return axios.put(`http://localhost:4000/questions/${id}`,obj)
     }
-    static update(id){
+    static delete(id){
         return axios.delete(`http://localhost:4000/questions/${id}`)
+    }
+    static findByUserId(id){
+        const userId = {userId: id}
+        return axios.post(`http://localhost:4000/questions/findById`,userId)
     }
 }
 

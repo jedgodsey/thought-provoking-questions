@@ -7,6 +7,7 @@ import QuestionCategory from '../pages/questions/QuestionCategory';
 import ShowQuestion from '../pages/questions/ShowQuestion';
 import NotAUser from '../pages/NotAUser';
 import AllUsers from '../pages/users/AllUsers';
+import ShowUser from '../pages/users/ShowUser';
 import PersonalDash from '../pages/users/PersonalDash';
 
 
@@ -17,6 +18,7 @@ export default (
         <Route path = '/questions/:category' component = {QuestionCategory}/>
         <Route path = '/questions' component = {AllQuestions}/>
         <Route path = '/GottaLoginBuddy' component = {NotAUser}/>
+        <Route path = '/users/:id' component = {ShowUser}/>
         <Route path = '/users' component = {AllUsers}/>
         <Route path = '/profile' component = {PersonalDash}/>
         <Route path = '/' component = {HomePage}/>

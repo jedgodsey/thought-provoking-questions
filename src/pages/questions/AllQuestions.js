@@ -9,6 +9,7 @@ import YouTube from 'react-youtube';
 function AllQuestions(props){
     const [categories, setCategories] = useState([]);
     const [videos, setVideos] = useState([]);
+    const [loadingVideos, setLoadingVideos] = useState(true);
 
     const opts = {
         height : '150',
@@ -35,6 +36,7 @@ function AllQuestions(props){
                 return <YouTube videoId ={obj.id.videoId} key = {index} opts = {opts}/>
             })
             setVideos(youtubeVideos);
+            setLoadingVideos(false);
             // console.log(youtubeObjects);
         });
     },[]);
@@ -53,7 +55,8 @@ function AllQuestions(props){
                 {categories}
             </div>
             <div className = "allYoutubeVideos">
-                {videos}
+                <h3>Related Youtube Videos!</h3>
+                {loadingVideos ? <p>Loading youtube videos ... </p> : videos}
             </div>
             {/* <YouTube videoId = "GOd1CaAP1HU" opts = {opts}/> */}
         </main>
