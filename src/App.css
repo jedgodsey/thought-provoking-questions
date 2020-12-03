@@ -97,3 +97,8 @@
 .questions-by-category .cards-holder{
     display: flex;
 }
+
+.allYoutubeVideos{
+    display: flex;
+    flex-wrap: wrap;
+}
