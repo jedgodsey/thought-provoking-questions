@@ -28,7 +28,9 @@ const ShowUser = (props) => {
     return (
         <div>
             <h2>{currentUser.name}'s Questions</h2>
-            {userQuestions}
+            <div className = "questions-holder">
+                {userQuestions}
+            </div>
         </div>
     );
 }
