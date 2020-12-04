@@ -33,7 +33,7 @@ function AllQuestions(props){
             const youtubeObjects = res.data.items;
             const youtubeVideos = youtubeObjects.map((obj, index)=>{
                 console.log(obj.id.videoId)
-                return <YouTube videoId ={obj.id.videoId} key = {index} opts = {opts}/>
+                return <YouTube className="youtubeVideo" videoId ={obj.id.videoId} key = {index} opts = {opts}/>
             })
             setVideos(youtubeVideos);
             setLoadingVideos(false);
@@ -54,8 +54,8 @@ function AllQuestions(props){
             <div className= "allQuestions">
                 {categories}
             </div>
+            <h3>Philosophy YouTube Videos!</h3>
             <div className = "allYoutubeVideos">
-                <h3>Related Youtube Videos!</h3>
                 {loadingVideos ? <p>Loading youtube videos ... </p> : videos}
             </div>
             {/* <YouTube videoId = "GOd1CaAP1HU" opts = {opts}/> */}

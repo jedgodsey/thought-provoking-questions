@@ -27,13 +27,13 @@ const QuestionCategory = (props) => {
             {loading ? <p>loading...</p> : (
                 <div>
                     <h1>
-                        Welcome the {category} questions
+                        {category} Questions 
                     </h1>
 
                     <div className ="cards-holder">
                         {questions}
                     </div>
-                    <Link to="/questions"><button type="button" className="btn btn-primary">back</button></Link>
+                    <Link className="ml-4" to="/questions"><button type="button" className="btn btn-primary">back</button></Link>
                 </div>
             )}
             

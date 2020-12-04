@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import QuestionModel from '../models/question';
 import {useSelector} from 'react-redux';
 import UserChecker from '../models/userChecker';
+import { Link } from 'react-router-dom';
+
 
 
 const QuestionForm = () => {
@@ -54,7 +56,8 @@ const QuestionForm = () => {
     }
     
     return (
-        <div>
+        <div className ="question-form-wrapper mb-5">
+            <div className="question-form">
             <h3>Question Form</h3>
             <form onSubmit = {handleSubmit}>
                 <textarea 
@@ -67,11 +70,15 @@ const QuestionForm = () => {
                 <select value = {pickedCategory} onChange={handleChange} className="selectpicker">
                     {categories}
                 </select>
-
-                <input type="submit" value="Submit" />
+                
+                <div className = "question-form-buttons">
+                    <input type="submit" value="Submit" />
+                    <Link to={`/questions`}><button type="button" className="btn btn-primary">back</button></Link>
+                </div>
             </form>
-            
+            </div>
         </div>
+        
     );
 }
 

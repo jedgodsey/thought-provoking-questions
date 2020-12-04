@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import UserChecker from '../models/userChecker';
 import  Logout  from './auth/Logout';
 import  LoginModal from './auth/LoginModal';
+import  RegisterModal from './auth/RegisterModal';
 
 
 const Navbar = () => {
@@ -42,6 +43,9 @@ const Navbar = () => {
                         <li className="nav-item">
                             <NavLink exact to="/questions" className="nav-link font-weight-bolder">Questions</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink exact to="/users" className="nav-link font-weight-bolder">Users</NavLink>
+                        </li>
                         
                         {isAthenticated ? 
                         <li>
@@ -56,6 +60,10 @@ const Navbar = () => {
                             </div>
                         </li>
                         }
+                        {!isAthenticated && 
+                        <li className="nav-item">
+                            <RegisterModal/>
+                        </li>}
                         {isAthenticated && 
                         <li className="nav-item">
                             <NavLink exact to="/profile" className="nav-link font-weight-bolder">Profile</NavLink>

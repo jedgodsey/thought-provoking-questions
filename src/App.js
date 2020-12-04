@@ -15,10 +15,11 @@ function App() {
   return (
     <Router>
       <Provider store = {store}>
-        <div className= "site">
-          <Navbar/>
-          {routes}
-        </div>
+        <div className = "sites-background"/>
+          <div className= "site">
+            <Navbar/>
+            {routes}
+          </div>
       </Provider>
     </Router>
   );
