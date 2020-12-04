@@ -10,9 +10,9 @@ const UserCard = (props) => {
     return (
         <Link to={`/users/${props.user._id}`}>
             <div>
-                <h2>
+                <h4>
                     {props.user.name}
-                </h2>
+                </h4>
             </div>
         </Link>
     );

@@ -32,8 +32,8 @@ const Reply = (props) => {
     }
 
     return (
-        <div>
-            {props.reply.reply} by {creator.name} {isAMatch && <button onClick = {editButtonHandler}>edit</button>}
+        <div className="mt-2">
+            {props.reply.reply} by {creator.name} {isAMatch && <button className = "btn btn-light" onClick = {editButtonHandler}>Edit Reply</button>}
             {editing && <EditReply reply = {props.reply}/>}
         </div>
     );

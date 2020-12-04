@@ -172,3 +172,25 @@
 .question-form .selectpicker{
     width: 200px;
 }
+
+/************************ ShowQuestion Styling *************************/
+
+.show-question{
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #00000055;
+}
+
+.allReplies{
+    border-top: 3px solid #bbb;
+    padding-top: 10px;
+}
+
+
+.questions-holder{
+    display: flex;
+    flex-wrap: wrap;
+}

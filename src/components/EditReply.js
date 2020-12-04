@@ -56,7 +56,7 @@ const EditReply = (props) => {
                 <input type= "submit" value = "Submit"/>
             </form>
             <form onSubmit ={deleteButtonHandler}>
-                <input type= "submit" value = "Delete"/>
+                <input className ="btn btn-danger" type= "submit" value = "Delete"/>
             </form>
         </div>
     );

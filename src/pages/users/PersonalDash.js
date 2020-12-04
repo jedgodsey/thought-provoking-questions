@@ -31,9 +31,10 @@ const PersonalDash = () => {
 
     return (
         <div>
-            <h1> Personal Dash </h1>
-            <p>{currentUser.name}</p>
-            {userQuestions}
+            <h1> Your Questions </h1>
+            <div className = "questions-holder">
+                {userQuestions}
+            </div>
         </div>
     );
 }

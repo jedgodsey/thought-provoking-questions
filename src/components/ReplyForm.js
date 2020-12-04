@@ -34,7 +34,7 @@ const ReplyForm = (props) => {
 
     return (
         <div>
-            Reply Form
+            Respond:
             <form onSubmit = {handleSubmit}>
                 <input onChange = {onTextChange} type="text" value = {input}/>
                 <input type= "submit" value = "Submit"/>

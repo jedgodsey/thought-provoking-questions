@@ -60,7 +60,7 @@ const EditQuestion = (props) => {
                 <input type="submit" value="Submit" />
             </form>
             
-            <button onClick = {deleteButtonHandler} >Delete</button>
+            <button className ="btn btn-danger" onClick = {deleteButtonHandler} >Delete</button>
         </div>
     );
 }

@@ -72,8 +72,8 @@ const QuestionForm = () => {
                 </select>
                 
                 <div className = "question-form-buttons">
-                    <input type="submit" value="Submit" />
                     <Link to={`/questions`}><button type="button" className="btn btn-primary">back</button></Link>
+                    <input type="submit" className="btn btn-light" value="Submit" />
                 </div>
             </form>
             </div>

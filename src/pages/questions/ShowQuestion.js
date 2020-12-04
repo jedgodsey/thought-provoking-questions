@@ -71,7 +71,7 @@ const ShowQuestion = (props) => {
     
     const getReplies = (replyArray) =>{
         const replyElem = replyArray.map((reply,index)=>{
-            return <Reply key = {index} reply = {reply}/> 
+            return <Reply  key = {index} reply = {reply}/> 
         });
         setReplies(replyElem);
     };  
@@ -82,26 +82,34 @@ const ShowQuestion = (props) => {
     }
 
     return (
-        <div>
+        <div className = "show-question">
             {loading ? 
                 <p>loading...</p> 
             : (
                 <div>
-                    {isaMatch && <h5> <button onClick = {editButtonHandler}>Edit</button></h5>}
-                    <h3>{questionText}</h3>
-                    {editing && <EditQuestion question = {question}/>}
+                    <div className="mb-4">
+                        <h3>{questionText}</h3>
 
-                    {creatorName ?
-                        <p>by {creatorName}</p>
-                    :
-                        <p>by anonymous</p>
-                    }
-                    {replies}
+                        {creatorName ?
+                            <p>by {creatorName}</p>
+                            :
+                            <p>by anonymous</p>
+                        }
+                        {isaMatch && <h5> <button className = "btn btn-light" onClick = {editButtonHandler}>Edit Question</button></h5>}
+                        {editing && <EditQuestion question = {question}/>}
+                    </div>
+                    
+                    <div className="allReplies">
+                        <h5><u>All Replies</u></h5>
+                        
+                        {replies}
+
+                    </div>
                     <ReplyForm questionId = {id}/>
                     <Link to={`/questions/${category}`}><button type="button" className="btn btn-primary">back</button></Link>
                 </div>
             )}
-            </div>
+        </div>
     );
 }
 

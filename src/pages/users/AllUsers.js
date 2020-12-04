@@ -23,7 +23,9 @@ const AllUsers = (props) => {
 
     return (
         <div>
-            All Users
+            <h1>
+                All Users
+            </h1>
             {/* <UserCard/> */}
             {users}
         </div>
