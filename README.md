@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Thought Provoking Questions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Thought Provoking Questions is as the name says. It is a site where like minded individuals can share questions that might boggle their mind. While others can react to their questions and hopefully reply.
 
 ## Available Scripts
 
@@ -101,3 +101,5 @@ Please make sure to update tests as appropriate.
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/ThoughtProvokingQuestions.png)
+![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/login.gif)
+![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/viewQuestion.gif)
