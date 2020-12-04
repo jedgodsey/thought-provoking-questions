@@ -82,6 +82,7 @@ const ShowQuestion = (props) => {
     }
 
     return (
+        <div className ="question-form-wrapper mb-5">
         <div className = "show-question">
             {loading ? 
                 <p>loading...</p> 
@@ -109,6 +110,7 @@ const ShowQuestion = (props) => {
                     <Link to={`/questions/${category}`}><button type="button" className="btn btn-primary">back</button></Link>
                 </div>
             )}
+        </div>
         </div>
     );
 }
