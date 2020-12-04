@@ -5,7 +5,7 @@ Thought Provoking Questions is as the name says. It is a site where like minded 
 
 ## Features!
 
-  - Loggin to let people know who you are.
+  - Log In to let people know who you are.
   - Create a question that you think others might like to answer.
   - Respond to other peoples question's and discuss about the question in hand.
   - See related youtube videos(Youtube Api)
