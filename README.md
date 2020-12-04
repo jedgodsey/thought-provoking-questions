@@ -100,4 +100,4 @@ Please make sure to update tests as appropriate.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-![Alt text](../readme_images/ThoughtProvokingQuestions.png "Title")
+![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/ThoughtProvokingQuestions.png)
