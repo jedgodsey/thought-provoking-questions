@@ -102,4 +102,4 @@ Please make sure to update tests as appropriate.
 
 ![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/ThoughtProvokingQuestions.png)
 ![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/login.gif)
-![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/viewQuestion.gif)
+![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/viewQuestions.gif)
