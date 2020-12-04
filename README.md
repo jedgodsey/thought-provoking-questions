@@ -20,7 +20,7 @@ Login:
 ![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/login.gif)
 
 Browse Questions:
-![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/login.gif)
+![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/viewQuestions.gif)
 
 ### Stack
 - Node.js
@@ -28,6 +28,6 @@ Browse Questions:
 - Express
 - React.js
 
-![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/ThoughtProvokingQuestions.png)
+<!-- ![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/ThoughtProvokingQuestions.png)
 ![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/login.gif)
-![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/viewQuestions.gif)
+![Alt text](https://github.com/Bryanromerou/thought-provoking-questions/blob/bryan/readme_images/viewQuestions.gif) -->
