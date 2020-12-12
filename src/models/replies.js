@@ -1,19 +1,19 @@
 import axios from 'axios';
 
-const url = 'http://localhost:4000/replies';
+const url = 'https://pure-ocean-22147.herokuapp.com/replies';
 
 class ReplyModel {
     static all(){
         return axios.get(url);
     }
     static addByQuestionId(obj){
-        return axios.post('http://localhost:4000/replies/byquestion/',obj)
+        return axios.post('https://pure-ocean-22147.herokuapp.com/replies/byquestion/',obj)
     }
     static update(id,obj){
-        return axios.put(`http://localhost:4000/replies/${id}`,obj)
+        return axios.put(`https://pure-ocean-22147.herokuapp.com/replies/${id}`,obj)
     }
     static delete(id){
-        return axios.delete(`http://localhost:4000/replies/${id}`)
+        return axios.delete(`https://pure-ocean-22147.herokuapp.com/replies/${id}`)
     }
 }
 

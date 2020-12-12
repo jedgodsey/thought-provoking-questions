@@ -1,31 +1,31 @@
 import axios from 'axios';
-const url = `http://localhost:4000/questions/`;
+const url = `https://pure-ocean-22147.herokuapp.com/questions/`;
 
 class QuestionModel {
     static all(){
         return axios.get(url);
     }
     static categories(){
-        return axios.get(`http://localhost:4000/categories/`)
+        return axios.get(`https://pure-ocean-22147.herokuapp.com/categories/`)
     }
     static questionsByCategory(category){
-        return axios.get(`http://localhost:4000/categories/${category}`)
+        return axios.get(`https://pure-ocean-22147.herokuapp.com/categories/${category}`)
     }
     static byId(id){
-        return axios.get(`http://localhost:4000/questions/${id}`)
+        return axios.get(`https://pure-ocean-22147.herokuapp.com/questions/${id}`)
     }
     static addQuestion(obj){
         return axios.post(url,obj)
     }
     static update(id,obj){
-        return axios.put(`http://localhost:4000/questions/${id}`,obj)
+        return axios.put(`https://pure-ocean-22147.herokuapp.com/questions/${id}`,obj)
     }
     static delete(id){
-        return axios.delete(`http://localhost:4000/questions/${id}`)
+        return axios.delete(`https://pure-ocean-22147.herokuapp.com/questions/${id}`)
     }
     static findByUserId(id){
         const userId = {userId: id}
-        return axios.post(`http://localhost:4000/questions/findById`,userId)
+        return axios.post(`https://pure-ocean-22147.herokuapp.com/questions/findById`,userId)
     }
 }
 

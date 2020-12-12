@@ -17,7 +17,7 @@ export const loadUser = () =>(dispatch,getState)=>{
     //User  loading
     dispatch({type: USER_LOADING});
 
-    axios.get('http://localhost:4000/auth/user/',tokenConfig(getState))
+    axios.get('https://pure-ocean-22147.herokuapp.com/auth/user/',tokenConfig(getState))
     .then(res=>{
         dispatch({
             type: USER_LOADED,
@@ -41,7 +41,7 @@ export const register = ({name, email, password})=> dispatch =>{
 
     const body = JSON.stringify({name,email,password});
 
-    axios.post('http://localhost:4000/auth/register/', body, config)
+    axios.post('https://pure-ocean-22147.herokuapp.com/auth/register/', body, config)
     .then(res=>{
         dispatch({
             type: REGISTER_SUCCESS,
@@ -66,7 +66,7 @@ export const login = ({email, password})=> dispatch =>{
 
     const body = JSON.stringify({email,password});
 
-    axios.post('http://localhost:4000/auth/login/', body, config)
+    axios.post('https://pure-ocean-22147.herokuapp.com/auth/login/', body, config)
     .then(res=>{
         dispatch({
             type: LOGIN_SUCCESS,
