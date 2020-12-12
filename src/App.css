@@ -14,20 +14,34 @@
     padding: 0;
     margin: 0;
 }
-
+.sites-background{
+    background-color: var(--mainColor);
+    /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 .site{
     position: absolute;
-    background-color: var(--mainColor);
+    /* background-color: var(--mainColor); */
     color: #FFFFFF;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+    /* height: 100vh;
+    width: 100vw; */
+    /* overflow: hidden; */
 }
 
 /************************ Navbar Styling *************************/
 #siteNav{
-    /* position: absolute;
-    width: 100%; */
+    /* position: absolute; */
+    width: 100vw;
     background: linear-gradient(#1B1B1D 3.36%, rgba(27, 27, 29, 0.494792) 56.8%, rgba(27, 27, 29, 0.271532) 83.04%, rgba(27, 27, 29, 0) 96.64%);
 }
 
@@ -73,21 +87,110 @@
 .homepage{
     display: flex;
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: -2;
+    display: grid;
+    grid-template-columns: 40px 50px auto 50px 40px;
+    grid-template-rows: 15% 500px auto;
 }
-.homepage-left{
-    width: 70%;
-    background-color: blue;
+.homepage-content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.493);
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    top: 1000px;
 }
-.homepage-right{
-    width: 30%;
-    background-color: red;
-}
-.loginFrom{
-    /* display: inline; */
-    background-color: #ffffff94;
+
+.homepage-quote{
+    padding: 10px;
+    background-color: #cccccc;
     color: black;
-    height: 30vh;
-    width: 70%;
+}
+
+
+.homepage-title{
+    color: #c5c5c5;
+}
+
+/************************ QuestionCategory Styling *************************/
+
+
+.questions-by-category .cards-holder{
+    display: flex;
+}
+
+
+/************************ AllQuestion Styling *************************/
+
+.allYoutubeVideos{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.youtubeVideo{
+    margin: 10px;
+}
+
+/************************ Questionform Styling *************************/
+
+.question-form-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.question-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000055;
+    width: fit-content;
+    padding: 30px;
+}
+
+.question-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.question-form .form_input{
+    width: 400px;
+    height: 250px;
+}
+
+.question-form .selectpicker{
+    width: 200px;
+}
+
+/************************ ShowQuestion Styling *************************/
+
+.show-question{
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #00000055;
+}
+
+.allReplies{
+    border-top: 3px solid #bbb;
+    padding-top: 10px;
+}
+
+
+.questions-holder{
+    display: flex;
+    flex-wrap: wrap;
 }

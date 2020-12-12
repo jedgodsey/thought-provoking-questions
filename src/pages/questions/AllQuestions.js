@@ -1,16 +1,45 @@
-import React, {useState} from 'react';
-import Question from '../../components/Question';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import Categories from '../../components/Categories';
+import QuestionModel from '../../models/question';
+import YoutubeModel from '../../models/youtube';
+import YouTube from 'react-youtube';
 
 
 function AllQuestions(props){
-    const [categories, setCategories] = useState([
-        <Link to="/questions/ethical"><Categories/></Link>,
-        <Link to="/questions/polls"><Categories category = "Polls"/></Link>,
-    ]);
+    const [categories, setCategories] = useState([]);
+    const [videos, setVideos] = useState([]);
+    const [loadingVideos, setLoadingVideos] = useState(true);
 
-    console.log(props)
+    const opts = {
+        height : '150',
+        width: '300',
+        // playerVars : {
+        //     autoplay: 1
+        // } This will make the video play on load
+    }
+
+    useEffect(()=>{//ComponentDidMount
+
+        QuestionModel.categories().then((response)=>{
+
+            const {categories} = response.data;
+            const categoriesArray = categories.map((category,index)=>{
+                return <Link to={`/questions/${category}`} key = {index} ><Categories category = {category} /></Link>;
+            });
+            setCategories(categoriesArray);
+        });
+        YoutubeModel.all().then((res)=>{
+            const youtubeObjects = res.data.items;
+            const youtubeVideos = youtubeObjects.map((obj, index)=>{
+                console.log(obj.id.videoId)
+                return <YouTube className="youtubeVideo" videoId ={obj.id.videoId} key = {index} opts = {opts}/>
+            })
+            setVideos(youtubeVideos);
+            setLoadingVideos(false);
+            // console.log(youtubeObjects);
+        });
+    },[]);
 
     return (
         <main className = "community-questions">
@@ -18,15 +47,18 @@ function AllQuestions(props){
             <div className="title container mt-4">
                 <h1>Community Questions</h1>
                 <div className = "filter_add_buttons">
-                    <button type="button" className="btn btn-light">Filter</button>
-                    <Link to="/questions/add"><button type="button" className="btn btn-primary">Add "?"</button></Link>
+                    <Link to="/questions/add"><button type="button" className="btn btn-secondary">Add "?"</button></Link>
                 </div>
             </div>
             
             <div className= "allQuestions">
                 {categories}
-                {Question}
             </div>
+            <h3>Philosophy YouTube Videos!</h3>
+            <div className = "allYoutubeVideos">
+                {loadingVideos ? <p>Loading youtube videos ... </p> : videos}
+            </div>
+            {/* <YouTube videoId = "GOd1CaAP1HU" opts = {opts}/> */}
         </main>
     );
 }
