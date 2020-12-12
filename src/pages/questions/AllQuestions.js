@@ -29,16 +29,16 @@ function AllQuestions(props){
             });
             setCategories(categoriesArray);
         });
-        // YoutubeModel.all().then((res)=>{
-        //     const youtubeObjects = res.data.items;
-        //     const youtubeVideos = youtubeObjects.map((obj, index)=>{
-        //         console.log(obj.id.videoId)
-        //         return <YouTube className="youtubeVideo" videoId ={obj.id.videoId} key = {index} opts = {opts}/>
-        //     })
-        //     setVideos(youtubeVideos);
-        //     setLoadingVideos(false);
-        //     // console.log(youtubeObjects);
-        // });
+        YoutubeModel.all().then((res)=>{
+            const youtubeObjects = res.data.items;
+            const youtubeVideos = youtubeObjects.map((obj, index)=>{
+                console.log(obj.id.videoId)
+                return <YouTube className="youtubeVideo" videoId ={obj.id.videoId} key = {index} opts = {opts}/>
+            })
+            setVideos(youtubeVideos);
+            setLoadingVideos(false);
+            // console.log(youtubeObjects);
+        });
     },[]);
 
     return (
