@@ -10,10 +10,6 @@ Thought Provoking Questions is as the name says. It is a site where like minded 
   - Respond to other peoples question's and discuss about the question in hand.
   - See related youtube videos(Youtube Api)
 
-You can also:
-  - Import and save files from GitHub, Dropbox, Google Drive and One Drive
-  - Drag and drop markdown and HTML files into Dillinger
-  - Export documents as Markdown, HTML and PDF
 
 ## How to Use
 Login:
